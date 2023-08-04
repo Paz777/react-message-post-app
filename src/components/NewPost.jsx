@@ -7,6 +7,7 @@ function NewPost() {
 
     function changeBodyHandler(event) {
         setEnteredBody(event.target.value);
+        //testing commit
     }
 
     return <form className={classes.form}>
