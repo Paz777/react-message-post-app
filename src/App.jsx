@@ -1,9 +1,13 @@
 import PostsList from './components/PostsList'
+import MainHeader from './components/MainHeader';
 
 function App() {
-  return <main>
-    <PostsList />
-  </main>
+  return <>
+    <MainHeader />
+    <main>
+      <PostsList />
+    </main>
+  </>
 }
 
 export default App;
