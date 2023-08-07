@@ -8,6 +8,7 @@ function PostsList() {
 
     const [enteredBody, setEnteredBody] = useState('Body');
     const [enteredAuthor, setEnteredAuthor] = useState('Author');
+    const [modalIsVisible, setModalIsVisible] = useState(true);
 
     function onBodyHandler(event) {
         setEnteredBody(event.target.value);
@@ -17,10 +18,14 @@ function PostsList() {
         setEnteredAuthor(event.target.value);
     }
 
+    function hideModalHandler() {
+        setModalIsVisible(false);
+    }
+
     return <>
-        <Modal>
+        {modalIsVisible && <Modal onClose={hideModalHandler}>
             <NewPost onBodyChange={onBodyHandler} onAuthorChange={onAuthorHandler} />
-        </Modal>
+        </Modal>}
         <ul className={classes.posts}>
             <Post author={enteredAuthor} body={enteredBody} />
             <Post author="Dobby" body="I am learning react" />
